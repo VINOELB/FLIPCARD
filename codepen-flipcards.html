@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+    <!-- HTML -->
+    <div class="container">
+        <div class="flip-card">
+            <div class="flip-card-inner">
+                <div class="flip-card-front">
+                    <div>What is Machine Learning?</div>
+                </div>
+                <div class="flip-card-back">
+                    <div>Machine Learning is a subset of AI that enables systems to automatically learn and improve from experience without being explicitly programmed.</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="flip-card">
+            <div class="flip-card-inner">
+                <div class="flip-card-front">
+                    <div>What is Deep Learning?</div>
+                </div>
+                <div class="flip-card-back">
+                    <div>Deep Learning is a type of Machine Learning that uses neural networks with multiple layers to analyze various factors of data.</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="flip-card">
+            <div class="flip-card-inner">
+                <div class="flip-card-front">
+                    <div>What is Natural Language Processing?</div>
+                </div>
+                <div class="flip-card-back">
+                    <div>NLP is a branch of AI that helps computers understand, interpret, and manipulate human language.</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <style>
+        body {
+            margin: 0;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+        
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .flip-card {
+            background-color: transparent;
+            width: 300px;
+            height: 200px;
+            perspective: 1000px;
+            cursor: pointer;
+        }
+
+        .flip-card-inner {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            text-align: center;
+            transition: transform 0.8s;
+            transform-style: preserve-3d;
+        }
+
+        .flip-card.flipped .flip-card-inner {
+            transform: rotateY(180deg);
+        }
+
+        .flip-card-front, .flip-card-back {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            backface-visibility: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            box-sizing: border-box;
+            border-radius: 12px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            font-family: Arial, sans-serif;
+        }
+
+        .flip-card-front {
+            background: linear-gradient(145deg, #3498db, #2980b9);
+            color: white;
+            font-size: 20px;
+            font-weight: bold;
+        }
+
+        .flip-card-back {
+            background: linear-gradient(145deg, #2ecc71, #27ae60);
+            color: white;
+            transform: rotateY(180deg);
+            font-size: 16px;
+            line-height: 1.5;
+        }
+
+        /* Hover effect */
+        .flip-card:hover {
+            transform: translateY(-5px);
+            transition: transform 0.3s ease;
+        }
+    </style>
+
+    <script>
+        document.querySelectorAll('.flip-card').forEach(card => {
+            card.addEventListener('click', () => {
+                card.classList.toggle('flipped');
+            });
+        });
+    </script>
+</body>
+</html>
